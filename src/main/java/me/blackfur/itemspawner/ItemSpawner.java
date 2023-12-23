@@ -59,11 +59,11 @@ public class ItemSpawner {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         for (String pair : Config.ITEM_ENTITY_PAIRS.get()) {
-             String[] pairArray = pair.split("->");
-             Item item = Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(pairArray[0])));
-             EntityType<?> entityType = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(pairArray[1]));
-             CUSTOM_SPAWN_EGGS.put(item, entityType);
-             DispenserBlock.registerBehavior(item, customeggdispensebehaviour);
+            String[] pairArray = pair.split("->");
+            Item item = Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(pairArray[0])));
+            EntityType<?> entityType = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(pairArray[1]));
+            CUSTOM_SPAWN_EGGS.put(item, entityType);
+            DispenserBlock.registerBehavior(item, customeggdispensebehaviour);
         }
     }
 }

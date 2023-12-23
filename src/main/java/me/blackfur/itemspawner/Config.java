@@ -13,9 +13,8 @@ public class Config {
 
     static {
         BUILDER.push("Base Config");
-        ITEM_ENTITY_PAIRS = BUILDER.comment("A list of items and their entities").defineList("item_entity_pairs", Arrays.asList("minecraft:iron_ingot->minecraft:iron_golem"), entry -> true);
+        ITEM_ENTITY_PAIRS = BUILDER.comment("A list of items and their entities").defineList("item_entity_pairs", List.of("minecraft:iron_ingot->minecraft:iron_golem"), entry -> true);
         BUILDER.pop();
-
         SPEC = BUILDER.build();
     }
 }
